@@ -2,11 +2,12 @@
 <html lang="en">
   <head>
     <meta charset="UTF-8">
-    <!-- Load the script that writes the complete HTML document -->
+    <!-- Preload the script to speed up its download -->
     <link rel="preload" href="/ssr.js" as="script">
-    <!-- <script src="ssr.js" ></script> -->
+    <!-- Synchronously execute the script -->
+    <script src="/ssr.js"></script>
   </head>
   <body>
-    <!-- This body is intentionally left empty. The final HTML is built by ssr.js -->
+    <!-- Body content -->
   </body>
 </html>
