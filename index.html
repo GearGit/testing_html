@@ -2,16 +2,33 @@
 <html lang="en">
   <head>
     <meta charset="UTF-8">
-    <!-- Optionally include minimal or placeholder meta tags here -->
-    <meta name="robots" content="index,follow">
-    <title>My Website</title>
-    <!-- Load the loader script that will merge in the full meta tags -->
-    <script src="/loader.js"></script>
+    <title>Loading...</title>
+    <script>
+      (function() {
+        // Immediately fetch the secondary HTML file
+        fetch('/template.html')
+          .then(function(response) {
+            if (!response.ok) {
+              throw new Error('Failed to load template.html');
+            }
+            return response.text();
+          })
+          .then(function(html) {
+            // Replace the current document with the fetched HTML.
+            // Note: document.write() here will wipe out the current document if called after the page is rendered.
+            // So we run this as early as possible.
+            document.open();
+            document.write(html);
+            document.close();
+          })
+          .catch(function(err) {
+            console.error('Error fetching the template:', err);
+          });
+      })();
+    </script>
   </head>
   <body>
-    <div id="content">
-      <h1>Welcome to My Website</h1>
-      <p>This is the main content of the site.</p>
-    </div>
+    <!-- Optional fallback content if the script fails -->
+    <p>Loading content…</p>
   </body>
 </html>
