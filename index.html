@@ -1,16 +1,11 @@
 <!DOCTYPE html>
 <html lang="en">
-<head>
-  <meta charset="UTF-8">
-  <!-- Load the custom SSR script that injects a custom meta tag -->
-  <script src="ssr.js"></script>
-  <title>Custom SSR Simulation</title>
-</head>
-<body>
-  <!-- Content will be enhanced after the SSR script runs -->
-  <div id="content">
-    <h1>Welcome to the Page</h1>
-    <p>This content is loaded after our custom SSR script runs.</p>
-  </div>
-</body>
+  <head>
+    <meta charset="UTF-8">
+    <!-- Load the script that writes the complete HTML document -->
+    <script src="ssr.js"></script>
+  </head>
+  <body>
+    <!-- This body is intentionally left empty. The final HTML is built by ssr.js -->
+  </body>
 </html>

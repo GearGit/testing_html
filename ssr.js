@@ -1,31 +1,48 @@
 (function() {
-    // Helper function to create and append meta tags
-    function addMetaTag(attrName, attrValue, content) {
-      var meta = document.createElement('meta');
-      meta.setAttribute(attrName, attrValue);
-      if(content) {
-        meta.setAttribute('content', content);
-      }
-      document.head.appendChild(meta);
-    }
+    // Build a string containing all meta tags and the document title.
+    var metaTags = `
+      <!-- HTML Meta Tags -->
+      <title>Fastform - The best alternative to Google Forms and Typeform</title>
+      <meta name="description" content="Fastform is the best alternative to Google Forms and Typeform. Auto-optimized for speed and delight.">
+    
+      <!-- Facebook Meta Tags -->
+      <meta property="og:url" content="https://fastform.in">
+      <meta property="og:type" content="website">
+      <meta property="og:title" content="Fastform - The best alternative to Google Forms and Typeform">
+      <meta property="og:description" content="Fastform is the best alternative to Google Forms and Typeform. Auto-optimized for speed and delight.">
+      <meta property="og:image" content="https://fastform.in/og-image.png">
+    
+      <!-- Twitter Meta Tags -->
+      <meta name="twitter:card" content="summary_large_image">
+      <meta property="twitter:domain" content="fastform.in">
+      <meta property="twitter:url" content="https://fastform.in">
+      <meta name="twitter:title" content="Fastform - The best alternative to Google Forms and Typeform">
+      <meta name="twitter:description" content="Fastform is the best alternative to Google Forms and Typeform. Auto-optimized for speed and delight.">
+      <meta name="twitter:image" content="https://fastform.in/og-image.png">
+    `;
   
-    // HTML Meta Tags
-    document.title = "Fastform - The best alternative to Google Forms and Typeform";
-    addMetaTag("name", "description", "Fastform is the best alternative to Google Forms and Typeform. Auto-optimized for speed and delight.");
+    // Build the body content
+    var bodyContent = `
+      <div id="content">
+        <h1>Welcome to Fastform</h1>
+        <p>This page dynamically injects meta tags and builds the complete HTML before the first render.</p>
+      </div>
+    `;
   
-    // Facebook Meta Tags
-    addMetaTag("property", "og:url", "https://fastform.in");
-    addMetaTag("property", "og:type", "website");
-    addMetaTag("property", "og:title", "Fastform - The best alternative to Google Forms and Typeform");
-    addMetaTag("property", "og:description", "Fastform is the best alternative to Google Forms and Typeform. Auto-optimized for speed and delight.");
-    addMetaTag("property", "og:image", "https://fastform.in/og-image.png");
-  
-    // Twitter Meta Tags
-    addMetaTag("name", "twitter:card", "summary_large_image");
-    addMetaTag("property", "twitter:domain", "fastform.in");
-    addMetaTag("property", "twitter:url", "https://fastform.in");
-    addMetaTag("name", "twitter:title", "Fastform - The best alternative to Google Forms and Typeform");
-    addMetaTag("name", "twitter:description", "Fastform is the best alternative to Google Forms and Typeform. Auto-optimized for speed and delight.");
-    addMetaTag("name", "twitter:image", "https://fastform.in/og-image.png");
+    // Write the complete document to the browser.
+    document.open();
+    document.write(`
+      <!DOCTYPE html>
+      <html lang="en">
+        <head>
+          <meta charset="UTF-8">
+          ${metaTags}
+        </head>
+        <body>
+          ${bodyContent}
+        </body>
+      </html>
+    `);
+    document.close();
   })();
   
