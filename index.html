@@ -2,24 +2,18 @@
 <html lang="en">
 <head>
   <meta charset="UTF-8">
-  <meta name="viewport" content="width=device-width, initial-scale=1.0">
-  <title>Static Title</title>
-  <meta name="description" content="Static description">
-  <meta property="og:image" content="static-image.jpg">
-  <script>
-    // Function to dynamically update metadata
-    function updateMetadata(title, description, imageUrl) {
-      document.title = title;
-
-      document.write('<meta name="description" content="' + description + '">');
-      document.write('<meta property="og:image" content="' + imageUrl + '">');
-    }
-
-    // Example usage
-    updateMetadata('Dynamic Title', 'Dynamic description', 'dynamic-image.jpg');
-  </script>
+  <!--
+    Include the custom SSR script here. This script is designed to run immediately 
+    so it can inject meta tags (or other necessary markup) before the rest of the DOM loads.
+  -->
+  <script src="ssr.js"></script>
+  <title>Custom SSR Simulation</title>
 </head>
 <body>
-  <h1>Hello World</h1>
+  <!-- Content will be enhanced after the SSR script runs -->
+  <div id="content">
+    <h1>Welcome to the Page</h1>
+    <p>This content is loaded after our custom SSR script runs.</p>
+  </div>
 </body>
 </html>
