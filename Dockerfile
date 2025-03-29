@@ -7,6 +7,7 @@ RUN rm -rf /usr/share/nginx/html/*
 # Copy your static files into the default Nginx directory
 COPY index.html /usr/share/nginx/html/
 COPY ssr.js /usr/share/nginx/html/
+COPY template.html /usr/share/nginx/html/
 
 # Expose port 80
 EXPOSE 80
