@@ -1,0 +1,25 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>Static Title</title>
+  <meta name="description" content="Static description">
+  <meta property="og:image" content="static-image.jpg">
+  <script>
+    // Function to dynamically update metadata
+    function updateMetadata(title, description, imageUrl) {
+      document.title = title;
+
+      document.write('<meta name="description" content="' + description + '">');
+      document.write('<meta property="og:image" content="' + imageUrl + '">');
+    }
+
+    // Example usage
+    updateMetadata('Dynamic Title', 'Dynamic description', 'dynamic-image.jpg');
+  </script>
+</head>
+<body>
+  <h1>Hello World</h1>
+</body>
+</html>
